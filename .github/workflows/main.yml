@@ -6,9 +6,9 @@ name: DockerHub CI
 on:
   # Triggers the workflow on push or pull request events but only for the main branch
   push:
-    branches: [ main ]
+    branches: [main]
   pull_request:
-    branches: [ main ]
+    branches: [main]
 
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
@@ -23,6 +23,12 @@ jobs:
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
       - uses: actions/checkout@v2
+      - name: Build test image
+        run: |
+          docker build -t ${{secrets.DOCKER_USER}}/shorty:test --target test .
+      - name: Run tests
+        run: |
+          docker run -it ${{secrets.DOCKER_USER}}/shorty:test
       - name: Login into Dockerhub
         env:
           DOCKER_USER: ${{secrets.DOCKER_USER}}
@@ -31,9 +37,7 @@ jobs:
           docker login -u $DOCKER_USER -p $DOCKER_PASSWORD
       - name: Build docker image
         run: |
-          docker build -t ${{secrets.DOCKER_USER}}/shorty .
+          docker build -t ${{secrets.DOCKER_USER}}/shorty --target application .
       - name: Push image to Dockerhub
         run: |
           docker push ${{secrets.DOCKER_USER}}/shorty
-          
-          

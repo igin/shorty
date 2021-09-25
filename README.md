@@ -48,6 +48,12 @@ docker run -it --rm \
   --month 8
 ```
 
+# Note on computed form fields
+
+The generated PDFs contain code that aggregates the entered hours across employees and the company.
+To fill those values open the PDFs in Acrobat Reader and edit on of the empty form fields. That should
+execute the code and update the values.
+
 # Support
 
 If you find this tool useful why not [!["Buy Me A Coffee"](https://www.buymeacoffee.com/assets/img/custom_images/orange_img.png)](https://www.buymeacoffee.com/XgyU1H3)

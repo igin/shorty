@@ -1,11 +1,10 @@
 FROM python:alpine
 
-WORKDIR /app
+WORKDIR /workdir
 
-RUN apk update
-RUN apk add git
+COPY requirements.txt requirements.txt
+RUN pip3 install -r requirements.txt
 
-COPY requirements-dev.txt requirements-dev.txt
-RUN pip3 install -r requirements-dev.txt
+COPY app ./app
 
-COPY app /app
+ENTRYPOINT ["python", "app/fill_short_time_form.py"]

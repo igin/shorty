@@ -24,11 +24,11 @@ if __name__ == '__main__':
 
 
     if not path.exists(args.report_file):
-        logging.critical("Provided report file doesn't exist. Please provide a correct path.")
+        logging.critical(f"Provided report file '{args.report_file}' doesn't exist. Please provide a correct path.")
         exit(1)
 
     if not path.exists(args.output_dir):
-        logging.critical("Provided output directory doesn't exist. Please provide a correct path.")
+        logging.critical(f"Provided output directory '{args.output_dir}' doesn't exist. Please provide a correct path.")
         exit(1)
     
 

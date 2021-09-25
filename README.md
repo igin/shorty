@@ -48,5 +48,10 @@ docker run -it --rm \
   --month 8
 ```
 
+# Support
+
+If you find this tool useful why not [!["Buy Me A Coffee"](https://www.buymeacoffee.com/assets/img/custom_images/orange_img.png)](https://www.buymeacoffee.com/XgyU1H3)
+
+
 
 

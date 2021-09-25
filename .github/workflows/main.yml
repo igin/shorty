@@ -28,7 +28,7 @@ jobs:
           docker build -t ${{secrets.DOCKER_USER}}/shorty:test --target test .
       - name: Run tests
         run: |
-          docker run -it ${{secrets.DOCKER_USER}}/shorty:test
+          docker run ${{secrets.DOCKER_USER}}/shorty:test
       - name: Login into Dockerhub
         env:
           DOCKER_USER: ${{secrets.DOCKER_USER}}

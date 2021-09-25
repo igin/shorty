@@ -10,7 +10,7 @@ a very time consuming and error prone manual task.
 This tool tries to solve this issue by automatically filling the PDF form from the export
 of a time tracking tool.
 
-# Time Report File
+## Time Report File
 
 The time report file is expected to be in CSV format and contain at least the following columns:
 
@@ -32,7 +32,7 @@ Date,Hours,First Name,Last Name
 
 Note: Multiple entries for the same day and same person will be accummulated. 
 
-# Usage using docker
+## Usage using docker
 
 Assuming you have the report file in `./input-data/report.csv` and want the output to be written to `./output-data/`
 use the following command to generate the pdfs. Pass the year and month you want to the pdfs to be generated for.
@@ -48,13 +48,13 @@ docker run -it --rm \
   --month 8
 ```
 
-# Note on computed form fields
+## Note on computed form fields
 
 The generated PDFs contain code that aggregates the entered hours across employees and the company.
 To fill those values open the PDFs in Acrobat Reader and edit on of the empty form fields. That should
 execute the code and update the values.
 
-# Support
+## Support
 
 If you find this tool useful why not [!["Buy Me A Coffee"](https://www.buymeacoffee.com/assets/img/custom_images/orange_img.png)](https://www.buymeacoffee.com/XgyU1H3)
 

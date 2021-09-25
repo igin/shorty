@@ -1,3 +1,5 @@
+![Shorty Overview](./overview.png)
+
 # Shorty - Automatically fill the Swiss short time form from a time tracking sheet
 
 The Swiss authorities want companies on short-time to submit a PDF form with details
